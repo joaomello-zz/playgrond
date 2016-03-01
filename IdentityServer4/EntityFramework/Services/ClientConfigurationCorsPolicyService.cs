@@ -15,19 +15,38 @@ namespace IdentityServer.EntityFramework
             _context = ctx;
         }
 
+        public bool AllowAll { get; set; }
+
         public async Task<bool> IsOriginAllowedAsync(string origin)
         {
-            var query =
-                from client in _context.Clients
-                from allowed in client.AllowedCorsOrigins
-                select allowed.Origin;
-            var urls = await query.ToArrayAsync();
+            if (AllowAll)
+            {
+                return true;
+            }
 
-            var origins = urls.Select(x => x.GetOrigin()).Where(x => x != null).Distinct();
+            // "hack"
+            var res = new List<string>();
+            var t = await _context.Clients.Select(x => x.AllowedCorsOrigins.Select(y => y.Origin).Where(z => z != null)).ToArrayAsync();
+            foreach (var item in t)
+            {
+                foreach (var aux in item)
+                    res.Add(aux.GetOrigin());
+            }
 
-            var result = origins.Contains(origin, StringComparer.OrdinalIgnoreCase);
+            return res.Contains(origin, StringComparer.OrdinalIgnoreCase);
+            
+            // TODO EntityFramework not work =/
+            //var query =
+            //    from client in _context.Clients
+            //    from allowed in client.AllowedCorsOrigins
+            //    select allowed.Origin;
+            //var urls = await query.ToArrayAsync();
 
-            return result;
+            //var origins = urls.Select(x => x.GetOrigin()).Where(x => x != null).Distinct();
+
+            //var result = origins.Contains(origin, StringComparer.OrdinalIgnoreCase);
+
+            //return result;
         }
     }
 }
