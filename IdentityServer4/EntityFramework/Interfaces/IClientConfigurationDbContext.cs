@@ -1,7 +1,7 @@
-﻿using IndentityServer.EntityFramework.Entities;
+﻿using IdentityServer.EntityFramework.Entities;
 using Microsoft.Data.Entity;
 
-namespace IndentityServer.EntityFramework
+namespace IdentityServer.EntityFramework
 {
     public interface IClientConfigurationDbContext
     {

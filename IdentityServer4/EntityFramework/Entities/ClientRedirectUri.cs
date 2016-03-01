@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace IndentityServer.EntityFramework.Entities
+namespace IdentityServer.EntityFramework.Entities
 {
     public class ClientRedirectUri
     {

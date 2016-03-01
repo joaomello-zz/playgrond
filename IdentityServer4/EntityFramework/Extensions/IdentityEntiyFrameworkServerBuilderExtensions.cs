@@ -1,7 +1,7 @@
 ﻿using IdentityServer4.Core.Services;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace IndentityServer.EntityFramework
+namespace IdentityServer.EntityFramework
 {
     public static class IdentityEntiyFrameworkServerBuilderExtensions
     {

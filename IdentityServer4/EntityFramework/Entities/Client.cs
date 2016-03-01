@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IndentityServer.EntityFramework.Entities
+namespace IdentityServer.EntityFramework.Entities
 {
     public class Client
     {

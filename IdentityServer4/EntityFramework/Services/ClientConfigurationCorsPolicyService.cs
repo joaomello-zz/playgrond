@@ -4,7 +4,7 @@ using System;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IndentityServer.EntityFramework
+namespace IdentityServer.EntityFramework
 {
     public class ClientConfigurationCorsPolicyService<T> : ICorsPolicyService where T : IClientConfigurationDbContext
     {

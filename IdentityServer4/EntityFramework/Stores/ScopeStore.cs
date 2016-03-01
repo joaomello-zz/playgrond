@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace IndentityServer.EntityFramework
+namespace IdentityServer.EntityFramework
 {
     public class ScopeStore<T> : IScopeStore where T : IScopeConfigurationDbContext
     {

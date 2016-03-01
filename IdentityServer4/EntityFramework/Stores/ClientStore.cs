@@ -4,7 +4,7 @@ using Microsoft.Data.Entity;
 using System;
 using System.Threading.Tasks;
 
-namespace IndentityServer.EntityFramework
+namespace IdentityServer.EntityFramework
 {
     public class ClientStore<T> : IClientStore where T : IClientConfigurationDbContext
     {

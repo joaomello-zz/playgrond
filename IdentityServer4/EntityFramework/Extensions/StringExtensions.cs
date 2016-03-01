@@ -1,4 +1,4 @@
-﻿namespace IndentityServer.EntityFramework
+﻿namespace IdentityServer.EntityFramework
 {
     internal static class StringExtensions
     {

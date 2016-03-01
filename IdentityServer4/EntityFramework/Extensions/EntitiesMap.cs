@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Security.Claims;
 
-namespace IndentityServer.EntityFramework
+namespace IdentityServer.EntityFramework
 {
     public static class EntitiesMap
     {
